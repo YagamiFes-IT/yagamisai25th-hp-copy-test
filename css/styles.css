@@ -1,0 +1,111 @@
+
+*{
+    font-family: "M PLUS 1", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.navbar{
+    position: fixed;
+    /* width: 100%; */
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #789ac1;
+    /* overflow: hidden; */
+    justify-content: right;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px ;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+.navbar ul li a:hover{
+    color: black;
+    transition: ease 0.3s;
+}
+
+.navbar-logo{
+    padding: 0;
+    margin-right: auto;
+}
+
+.navbar-logo a{
+    margin: 0;
+    padding: 0 !important;
+}
+
+h1{
+    font-size: 24px;
+}
+
+.flex{
+    display: flex;
+}
+
+.hero-div{
+    margin-top: 108px;
+    justify-content: center;
+    gap: 24px;
+}
+
+.hero-div div{
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.greeting{
+    justify-content: center;
+    margin: 48px 32px;
+}
+
+.greeting img{
+    display: block;
+    margin: 0 auto;
+}
+
+
+.greeting p{
+    font-weight: 300;
+}
+
+.info{
+    width: 100%;
+}
+
+.name{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.instagram-link{
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: gray;
+}
+
+footer{
+    text-align: center;
+    margin: 24px;
+}
+
+

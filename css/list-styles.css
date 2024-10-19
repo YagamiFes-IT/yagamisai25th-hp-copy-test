@@ -1,0 +1,23 @@
+
+h1{
+    text-align: center;
+    margin: 24px;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+#loading{
+    text-align: center;
+    margin:  100px auto;
+}
+
+.event{
+    max-width: 640px;
+    background-color: #dfe6ee;
+    padding: 8px 8px 8px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 12px auto;
+}
