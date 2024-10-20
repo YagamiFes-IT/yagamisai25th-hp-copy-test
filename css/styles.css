@@ -7,13 +7,11 @@
 
 .navbar{
     position: fixed;
-    /* width: 100%; */
     top: 0;
     right: 0;
     left: 0;
     z-index: 100;
     background-color: #789ac1;
-    /* overflow: hidden; */
     justify-content: right;
 }
 
@@ -22,6 +20,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 
 .navbar ul li a{
@@ -46,6 +45,11 @@
 .navbar-logo a{
     margin: 0;
     padding: 0 !important;
+}
+
+.navbar-logo a img{
+    height: 40px; 
+    padding: 12px;
 }
 
 h1{
@@ -95,7 +99,8 @@ h1{
 
 .greeting{
     justify-content: center;
-    margin: 48px auto;
+    padding: 24px;
+    margin: 0 auto;
     max-width: 980px;
 }
 
