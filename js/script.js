@@ -10,11 +10,14 @@ const firebaseConfig = {
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    // const analytics = getAnalytics(app);
+
+    const firestoreSettings = { cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED };
+    firebase.firestore().settings(firestoreSettings);
     
     const db = firebase.firestore();
 
     const pageSize = 35; // 1ページあたりのイベント数
+    let lastVisible = null; 
 
     async function getSingleEvent(eventId) {
         const eventsCol = db.collection("events");
@@ -25,13 +28,21 @@ const firebaseConfig = {
         return event;
     }
 
-    let lastVisible = null; 
+
 
     async function getEventsPage(pageNumber) {
         const eventContainer = document.getElementById('event-container');
         const loading = document.getElementById('loading');
         eventContainer.innerHTML = ''; // 以前のデータをクリア
         loading.style.display = "block";
+
+        const cachedData = localStorage.getItem(`events_page_${pageNumber}`);
+        if(cachedData){
+          const events = JSON.parse(cachedData);
+          events.forEach(event => displayEvent(event));
+          loading.style.display = "none";
+          return;
+        }
       
         let query = db.collection("events")
           .orderBy("festivalId") // 並び替え
@@ -42,17 +53,20 @@ const firebaseConfig = {
         }
         try{
             const eventSnapshot = await query.get();
+            const events = [];
         
             // イベント情報を表示し、次のページ用に最後のドキュメントを保存
             eventSnapshot.forEach(doc => {
               const event = doc.data();
               displayEvent(event);
+              events.push(event);
             });
             // 最後のドキュメントを保存（次ページ取得のため）
             lastVisible = eventSnapshot.docs[eventSnapshot.docs.length - 1];
+            localStorage.setItem(`events_page_${pageNumber}`, JSON.stringify(events));
 
         } catch (error){
-
+          console.error("データの取得に失敗しました:", error);
         } finally {
             loading.style.display = "none";
 
