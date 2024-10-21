@@ -1,8 +1,8 @@
 .detail-event-container{
     max-width: 640px;
+    padding: 0 24px;
     display: block;
-    margin: 0 auto;
-    
+    margin: 0 auto; 
 }
 
 .detail-img{

@@ -10,15 +10,21 @@ h1{
     margin:  100px auto;
 }
 
-.event{
+#event-container{
     max-width: 640px;
-    background-color: #dfe6ee;
+    margin: 12px auto;
+    padding: 24px;
+}
+
+.event{
+    background-color: #e9f0fb;
+    box-shadow:  2px 2px 4px gray;
     padding: 8px 8px 8px 24px;
+    margin: 16px 0;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: right;
-    margin: 12px auto;
 }
 
 .pagination{

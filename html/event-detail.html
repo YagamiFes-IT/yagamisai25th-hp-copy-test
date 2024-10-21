@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
     <title>企画詳細</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Firebase CDN -->
     <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
+    <!-- Styles -->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/event-detail-style.css">
-    <title>企画詳細</title>
+    <!-- Script -->
+    <script type="text/javascript" src="../js/script.js" defer></script>
+    <script type="text/javascript" src="../js/event-detail.js" defer></script>
 </head>
 <body>
+
+    <div id="header-placeholder"></div>
+    <script>
+    fetch('../partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
+
     <div class="detail-event-container">
         <h2 class="detail-name"></h2>
         <p class="detail-comment"></p>
@@ -23,7 +41,15 @@
             <p class="detail-host"></p>
         </div>
     </div>
-    <script type="text/javascript" src="../js/script.js"></script>
-    <script type="text/javascript" src="../js/event-detail.js"></script>
+
+    <div id="footer-placeholder"></div>
+    <script>
+    fetch('../partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
+
 </body>
 </html>

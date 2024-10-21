@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase取得テスト</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap" rel="stylesheet">
     <!-- Firebase CDN -->
     <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
-
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Script -->
+    <script type="text/javascript" src="../js/script.js" defer></script>
+    <script type="text/javascript" src="../js/event-detail.js" defer></script>
 </head>
 <body>
 
-    <div class="navbar">
-        <ul>
-            <li class="navbar-logo"><a href="/"><img src="images/logo_no_words.png" alt=""></a></li>
-            <li><a href="/html/events-list.html">企画一覧</a></li>
-            <li><a href="/html/navigation.html">ご案内</a></li>
-            <li><a href="/html/original-contents.html">オリジナルコンテンツ</a></li>
-        </ul>
-    </div>
-
+    <div id="header-placeholder"></div>
+    <script>
+    fetch('../partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
 
     <div class="hero-div">
-        <img src="images/logo_yagamifes.png" alt="">
+        <img src="../images/logo_yagamifes.png" alt="">
         <div>
             <h1>第25回矢上祭</h1>
             <p>開催日時<br>9/21 12:00-18:00<br>9/22 10:00-19:00</p>
@@ -38,7 +41,7 @@
         <h2>委員長挨拶</h2>
 
         <div class="greeting-flex">
-            <img src="images/iintyou.jpg" alt="">
+            <img src="../images/iintyou.jpg" alt="">
             <p>
                 第25回矢上祭実行委員会にて委員長を務めております石田樹生と申します。
                 <br><br>
@@ -57,6 +60,15 @@
 
     <a class="instagram-link" href="https://www.instagram.com/yagamifes.gram?igsh=MTExanNwM2J4djhp">Instagram</a>
 
+    <div id="footer-placeholder"></div>
+    <script>
+    fetch('../partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
+
 </body>
-<footer>&copy; 2024 矢上祭</footer>
+
 </html>
